@@ -1,0 +1,350 @@
+:root {
+  --primary: #1f3864;
+  --accent: #2e75b6;
+  --light-bg: #f4f7fb;
+  --border: #dbe4ef;
+  --text: #2b2b2b;
+}
+
+
+/* =========================
+   BASIC PAGE
+========================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  color: var(--text);
+  background-color: #f8f9fa;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  background-color: var(--primary);
+}
+
+.navbar-brand {
+  font-weight: 700;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  padding: 130px 0 80px;
+  text-align: center;
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--accent)
+    );
+}
+
+.hero h1 {
+  font-weight: 700;
+}
+
+
+/* =========================
+   LAB SECTIONS
+========================= */
+
+.lab-section {
+  padding: 45px 0;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-heading h2 {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.section-heading p {
+  color: #6c757d;
+}
+
+
+/* =========================
+   PROFILE CARD
+========================= */
+
+.profile-card {
+  background-color: white;
+
+  border:
+    1px solid var(--border);
+
+  border-left:
+    5px solid var(--accent);
+
+  border-radius: 10px;
+
+  padding: 24px;
+
+  box-shadow:
+    0 3px 12px
+    rgba(31, 56, 100, 0.08);
+}
+
+
+/* =====================================================
+   TASK 1
+===================================================== */
+
+.course-planner-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.course-item {
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 12px;
+
+  margin-bottom: 10px;
+
+  background-color:
+    #f4f7fb;
+
+  border:
+    1px solid #dbe4ef;
+
+  border-radius: 7px;
+}
+
+.course-name {
+  cursor: pointer;
+  flex: 1;
+}
+
+.course-item.completed
+.course-name {
+
+  text-decoration:
+    line-through;
+
+  opacity: 0.55;
+}
+
+.course-stats {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+
+  padding: 15px;
+
+  background-color:
+    var(--light-bg);
+
+  border-radius: 7px;
+}
+
+.course-error {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+.course-success {
+  color: #198754;
+  font-weight: 600;
+}
+
+.longest-course {
+  background-color:
+    #fff3cd;
+
+  border:
+    2px solid #ffc107;
+}
+
+
+/* =====================================================
+   TASK 2
+===================================================== */
+
+.student-id-card {
+  min-height: 250px;
+
+  padding: 25px;
+
+  border-radius: 15px;
+
+  color: white;
+
+  background-color:
+    #0d6efd;
+
+  box-shadow:
+    0 8px 20px
+    rgba(0, 0, 0, 0.15);
+
+  transition:
+    background-color 0.3s;
+}
+
+.student-id-card h3 {
+  margin-bottom: 20px;
+}
+
+.student-id-card p {
+  margin-bottom: 10px;
+}
+
+
+/* =====================================================
+   TASK 3
+===================================================== */
+
+#courseRegistrationOutput
+.summary-card {
+
+  background-color:
+    #e9f7ef;
+
+  border-left:
+    5px solid #198754;
+
+  padding: 18px;
+
+  border-radius: 7px;
+}
+
+
+/* =====================================================
+   TASK 4
+===================================================== */
+
+.dashboard-stat {
+  background-color: white;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 10px;
+
+  padding: 18px;
+
+  text-align: center;
+
+  height: 100%;
+}
+
+.dashboard-stat h4 {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.student-dashboard-card {
+  background-color: white;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 10px;
+
+  padding: 20px;
+
+  margin-bottom: 15px;
+
+  box-shadow:
+    0 2px 8px
+    rgba(0, 0, 0, 0.05);
+}
+
+.student-dashboard-card h4 {
+  color: var(--primary);
+}
+
+.dashboard-buttons {
+  display: flex;
+
+  gap: 8px;
+
+  flex-wrap: wrap;
+
+  margin-top: 15px;
+}
+
+.edit-cgpa-area {
+  margin-top: 15px;
+
+  padding: 15px;
+
+  background-color:
+    #f4f7fb;
+
+  border-radius: 7px;
+}
+
+.status-excellent {
+  color: #198754;
+}
+
+.status-good {
+  color: #0d6efd;
+}
+
+.status-satisfactory {
+  color: #fd7e14;
+}
+
+.status-warning {
+  color: #dc3545;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  background-color:
+    var(--primary);
+
+  color: white;
+
+  text-align: center;
+
+  padding: 20px 0;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .course-stats {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+}

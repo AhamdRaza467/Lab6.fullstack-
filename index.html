@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>CS-301L - Lab 06</title>
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       NAVBAR
+  ====================================================== -->
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+    <div class="container">
+
+      <a class="navbar-brand" href="#home">
+        CS-301L
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div
+        class="collapse navbar-collapse"
+        id="mainNav"
+      >
+
+        <ul class="navbar-nav ms-auto">
+
+          <li class="nav-item">
+            <a class="nav-link" href="#task1">
+              Task 1
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#task2">
+              Task 2
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#task3">
+              Task 3
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#task4">
+              Task 4
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
+
+  <header
+    id="home"
+    class="hero"
+  >
+
+    <div class="container">
+
+      <h1>Full Stack Web Development</h1>
+
+      <p>
+        Lab 06 - DOM Manipulation, Events,
+        Form Validation and Dynamic Updates
+      </p>
+
+    </div>
+
+  </header>
+
+
+  <main class="py-5">
+
+    <div class="container">
+
+
+      <!-- =====================================================
+           TASK 1
+           INTERACTIVE COURSE PLANNER
+      ====================================================== -->
+
+      <section
+        id="task1"
+        class="lab-section"
+      >
+
+        <div class="section-heading">
+
+          <h2>
+            Task 1 - Interactive Course Planner
+          </h2>
+
+          <p>
+            DOM Selection, Creating Elements,
+            Events and classList
+          </p>
+
+        </div>
+
+
+        <div class="profile-card">
+
+          <div class="row g-2">
+
+            <div class="col-md-9">
+
+              <input
+                type="text"
+                id="courseInput"
+                class="form-control"
+                placeholder="Type a course name..."
+              >
+
+            </div>
+
+            <div class="col-md-3">
+
+              <button
+                type="button"
+                id="addCourseBtn"
+                class="btn btn-primary w-100"
+              >
+                Add Course
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <div
+            id="courseMessage"
+            class="my-3"
+          ></div>
+
+
+          <ul
+            id="coursePlannerList"
+            class="course-planner-list"
+          ></ul>
+
+
+          <div class="course-stats my-3">
+
+            <span>
+              Total Courses:
+              <strong id="totalCourses">0</strong>
+            </span>
+
+            <span>
+              Completed:
+              <strong id="completedCourses">0</strong>
+            </span>
+
+            <span>
+              Remaining:
+              <strong id="remainingCourses">0</strong>
+            </span>
+
+          </div>
+
+
+          <div class="d-flex gap-2 flex-wrap">
+
+            <button
+              type="button"
+              id="clearCoursesBtn"
+              class="btn btn-danger"
+            >
+              Clear All
+            </button>
+
+            <button
+              type="button"
+              id="highlightLongestBtn"
+              class="btn btn-warning"
+            >
+              Highlight Longest
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =====================================================
+           TASK 2
+           LIVE STUDENT ID CARD
+      ====================================================== -->
+
+      <section
+        id="task2"
+        class="lab-section"
+      >
+
+        <div class="section-heading">
+
+          <h2>
+            Task 2 - Live Student ID Card Generator
+          </h2>
+
+          <p>
+            Input Events, Change Events and Live Updates
+          </p>
+
+        </div>
+
+
+        <div class="profile-card">
+
+          <div class="row g-4">
+
+
+            <!-- FORM -->
+
+            <div class="col-lg-6">
+
+              <form id="idCardForm">
+
+                <!-- Name -->
+
+                <div class="mb-3">
+
+                  <label
+                    for="idName"
+                    class="form-label"
+                  >
+                    Full Name
+                  </label>
+
+                  <input
+                    type="text"
+                    id="idName"
+                    class="form-control"
+                    maxlength="30"
+                    placeholder="Enter your name"
+                  >
+
+                  <small
+                    id="nameCounter"
+                    class="text-muted"
+                  >
+                    Characters left: 30
+                  </small>
+
+                </div>
+
+
+                <!-- Roll -->
+
+                <div class="mb-3">
+
+                  <label
+                    for="idRoll"
+                    class="form-label"
+                  >
+                    Roll Number
+                  </label>
+
+                  <input
+                    type="text"
+                    id="idRoll"
+                    class="form-control"
+                    placeholder="BSCS-001"
+                  >
+
+                </div>
+
+
+                <!-- Department -->
+
+                <div class="mb-3">
+
+                  <label
+                    for="idDepartment"
+                    class="form-label"
+                  >
+                    Department
+                  </label>
+
+                  <select
+                    id="idDepartment"
+                    class="form-select"
+                  >
+
+                    <option value="">
+                      -- Select Department --
+                    </option>
+
+                    <option>
+                      Computer Science
+                    </option>
+
+                    <option>
+                      Software Engineering
+                    </option>
+
+                    <option>
+                      Data Science
+                    </option>
+
+                  </select>
+
+                </div>
+
+
+                <!-- Semester -->
+
+                <div class="mb-3">
+
+                  <label
+                    for="idSemester"
+                    class="form-label"
+                  >
+                    Semester
+                  </label>
+
+                  <input
+                    type="number"
+                    id="idSemester"
+                    class="form-control"
+                    min="1"
+                    max="8"
+                    placeholder="1 - 8"
+                  >
+
+                </div>
+
+
+                <!-- Color -->
+
+                <div class="mb-3">
+
+                  <label
+                    for="idColor"
+                    class="form-label"
+                  >
+                    Card Color
+                  </label>
+
+                  <select
+                    id="idColor"
+                    class="form-select"
+                  >
+
+                    <option value="#0d6efd">
+                      Blue
+                    </option>
+
+                    <option value="#198754">
+                      Green
+                    </option>
+
+                    <option value="#6f42c1">
+                      Purple
+                    </option>
+
+                    <option value="#212529">
+                      Dark
+                    </option>
+
+                  </select>
+
+                </div>
+
+
+                <!-- CGPA Checkbox -->
+
+                <div class="form-check mb-3">
+
+                  <input
+                    type="checkbox"
+                    id="showCgpa"
+                    class="form-check-input"
+                  >
+
+                  <label
+                    for="showCgpa"
+                    class="form-check-label"
+                  >
+                    Show CGPA Badge
+                  </label>
+
+                </div>
+
+
+                <!-- CGPA Input -->
+
+                <div
+                  id="cgpaInputGroup"
+                  class="mb-3 d-none"
+                >
+
+                  <label
+                    for="idCgpa"
+                    class="form-label"
+                  >
+                    CGPA
+                  </label>
+
+                  <input
+                    type="number"
+                    id="idCgpa"
+                    class="form-control"
+                    min="0"
+                    max="4"
+                    step="0.01"
+                    placeholder="3.50"
+                  >
+
+                </div>
+
+
+                <!-- Manual Reset -->
+
+                <button
+                  type="button"
+                  id="idCardResetBtn"
+                  class="btn btn-secondary"
+                >
+                  Reset
+                </button>
+
+              </form>
+
+            </div>
+
+
+            <!-- LIVE CARD -->
+
+            <div class="col-lg-6">
+
+              <h5>Live ID Card</h5>
+
+              <div
+                id="studentIdCard"
+                class="student-id-card"
+              >
+
+                <h3 id="cardName">
+                  Your Name
+                </h3>
+
+                <p>
+                  <strong>Roll No:</strong>
+                  <span id="cardRoll">
+                    Your Roll Number
+                  </span>
+                </p>
+
+                <p>
+                  <strong>Department:</strong>
+                  <span id="cardDepartment">
+                    Your Department
+                  </span>
+                </p>
+
+                <p>
+                  <strong>Semester:</strong>
+                  <span id="cardSemester">
+                    Your Semester
+                  </span>
+                </p>
+
+
+                <div
+                  id="cardCgpaContainer"
+                  class="d-none"
+                >
+
+                  <span
+                    class="badge bg-light text-dark"
+                  >
+
+                    CGPA:
+
+                    <span id="cardCgpa">
+                      0.00
+                    </span>
+
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <!-- Summary -->
+
+              <div class="mt-4">
+
+                <label
+                  for="downloadSummary"
+                  class="form-label"
+                >
+                  Download Summary
+                </label>
+
+                <textarea
+                  id="downloadSummary"
+                  class="form-control"
+                  rows="6"
+                  readonly
+                ></textarea>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =====================================================
+           TASK 3
+           COURSE REGISTRATION
+      ====================================================== -->
+
+      <section
+        id="task3"
+        class="lab-section"
+      >
+
+        <div class="section-heading">
+
+          <h2>
+            Task 3 - Course Registration Form
+          </h2>
+
+          <p>
+            HTML5 Validation and
+            Constraint Validation API
+          </p>
+
+        </div>
+
+
+        <div class="profile-card">
+
+          <form
+            id="courseRegistrationForm"
+            novalidate
+          >
+
+            <div class="row">
+
+
+              <!-- Full Name -->
+
+              <div class="col-md-6 mb-3">
+
+                <label
+                  for="regCourseName"
+                  class="form-label"
+                >
+                  Full Name
+                </label>
+
+                <input
+                  type="text"
+                  id="regCourseName"
+                  name="fullName"
+                  class="form-control"
+                  required
+                  minlength="3"
+                >
+
+                <div class="invalid-feedback">
+                  Name must contain at least 3 characters.
+                </div>
+
+              </div>
+
+
+              <!-- Email -->
+
+              <div class="col-md-6 mb-3">
+
+                <label
+                  for="regCourseEmail"
+                  class="form-label"
+                >
+                  Email
+                </label>
+
+                <input
+                  type="email"
+                  id="regCourseEmail"
+                  name="email"
+                  class="form-control"
+                  required
+                >
+
+                <div class="invalid-feedback">
+                  Enter a valid email address.
+                </div>
+
+              </div>
+
+
+              <!-- Phone -->
+
+              <div class="col-md-6 mb-3">
+
+                <label
+                  for="regPhone"
+                  class="form-label"
+                >
+                  Phone
+                </label>
+
+                <input
+                  type="text"
+                  id="regPhone"
+                  name="phone"
+                  class="form-control"
+                  required
+                  pattern="03[0-9]{9}"
+                  title="Phone must look like 03001234567"
+                  placeholder="03001234567"
+                >
+
+                <div
+                  id="phoneLiveMessage"
+                  class="form-text"
+                ></div>
+
+                <div class="invalid-feedback">
+                  Phone must look like 03001234567.
+                </div>
+
+              </div>
+
+
+              <!-- DOB -->
+
+              <div class="col-md-6 mb-3">
+
+                <label
+                  for="regDob"
+                  class="form-label"
+                >
+                  Date of Birth
+                </label>
+
+                <input
+                  type="date"
+                  id="regDob"
+                  name="dob"
+                  class="form-control"
+                  required
+                >
+
+                <div class="invalid-feedback">
+                  Student must be at least 16 years old.
+                </div>
+
+              </div>
+
+
+              <!-- Course -->
+
+              <div class="col-md-6 mb-3">
+
+                <label
+                  for="regCourse"
+                  class="form-label"
+                >
+                  Course
+                </label>
+
+                <select
+                  id="regCourse"
+                  name="course"
+                  class="form-select"
+                  required
+                >
+
+                  <option value="">
+                    -- Select Course --
+                  </option>
+
+                  <option>
+                    Web Development
+                  </option>
+
+                  <option>
+                    Database Systems
+                  </option>
+
+                  <option>
+                    Artificial Intelligence
+                  </option>
+
+                </select>
+
+                <div class="invalid-feedback">
+                  Please select a course.
+                </div>
+
+              </div>
+
+
+              <!-- Password -->
+
+              <div class="col-md-6 mb-3">
+
+                <label
+                  for="regPassword"
+                  class="form-label"
+                >
+                  Password
+                </label>
+
+                <input
+                  type="password"
+                  id="regPassword"
+                  name="password"
+                  class="form-control"
+                  required
+                  minlength="8"
+                >
+
+                <div class="invalid-feedback">
+                  Minimum 8 characters and at least one digit.
+                </div>
+
+              </div>
+
+
+              <!-- Confirm Password -->
+
+              <div class="col-md-6 mb-3">
+
+                <label
+                  for="regConfirmPassword"
+                  class="form-label"
+                >
+                  Confirm Password
+                </label>
+
+                <input
+                  type="password"
+                  id="regConfirmPassword"
+                  class="form-control"
+                  required
+                >
+
+                <div class="invalid-feedback">
+                  Passwords must match.
+                </div>
+
+              </div>
+
+
+              <!-- Terms -->
+
+              <div
+                class="col-md-6 mb-3 d-flex align-items-end"
+              >
+
+                <div class="form-check">
+
+                  <input
+                    type="checkbox"
+                    id="regTerms"
+                    name="terms"
+                    class="form-check-input"
+                    required
+                  >
+
+                  <label
+                    for="regTerms"
+                    class="form-check-label"
+                  >
+                    I accept the terms and conditions
+                  </label>
+
+                  <div class="invalid-feedback">
+                    You must accept the terms.
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!-- Show Password -->
+
+            <div class="form-check mb-3">
+
+              <input
+                type="checkbox"
+                id="showPassword"
+                class="form-check-input"
+              >
+
+              <label
+                for="showPassword"
+                class="form-check-label"
+              >
+                Show / Hide Password
+              </label>
+
+            </div>
+
+
+            <button
+              type="submit"
+              class="btn btn-primary"
+            >
+              Register
+            </button>
+
+          </form>
+
+
+          <div
+            id="courseRegistrationOutput"
+            class="mt-4"
+          ></div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =====================================================
+           TASK 4
+           STUDENT MANAGEMENT DASHBOARD
+      ====================================================== -->
+
+      <section
+        id="task4"
+        class="lab-section"
+      >
+
+        <div class="section-heading">
+
+          <h2>
+            Task 4 - Student Management Dashboard
+          </h2>
+
+          <p>
+            Add, Search, Filter, Sort,
+            Edit and Delete Students
+          </p>
+
+        </div>
+
+
+        <!-- ADD STUDENT -->
+
+        <div class="profile-card mb-4">
+
+          <h4 class="mb-3">
+            Add Student
+          </h4>
+
+
+          <form
+            id="dashboardStudentForm"
+            novalidate
+          >
+
+            <div class="row">
+
+
+              <!-- Name -->
+
+              <div class="col-md-6 mb-3">
+
+                <label
+                  for="dashName"
+                  class="form-label"
+                >
+                  Full Name
+                </label>
+
+                <input
+                  type="text"
+                  id="dashName"
+                  class="form-control"
+                  required
+                  minlength="3"
+                >
+
+                <div
+                  id="dashNameError"
+                  class="invalid-feedback"
+                ></div>
+
+              </div>
+
+
+              <!-- Roll -->
+
+              <div class="col-md-6 mb-3">
+
+                <label
+                  for="dashRoll"
+                  class="form-label"
+                >
+                  Roll Number
+                </label>
+
+                <input
+                  type="text"
+                  id="dashRoll"
+                  class="form-control"
+                  required
+                  pattern="BSCS-[0-9]{3}"
+                  title="Format: BSCS-001"
+                  placeholder="BSCS-001"
+                >
+
+                <div
+                  id="dashRollError"
+                  class="invalid-feedback"
+                ></div>
+
+              </div>
+
+
+              <!-- Email -->
+
+              <div class="col-md-6 mb-3">
+
+                <label
+                  for="dashEmail"
+                  class="form-label"
+                >
+                  Email
+                </label>
+
+                <input
+                  type="email"
+                  id="dashEmail"
+                  class="form-control"
+                  required
+                >
+
+                <div
+                  id="dashEmailError"
+                  class="invalid-feedback"
+                ></div>
+
+              </div>
+
+
+              <!-- Department -->
+
+              <div class="col-md-6 mb-3">
+
+                <label
+                  for="dashDepartment"
+                  class="form-label"
+                >
+                  Department
+                </label>
+
+                <select
+                  id="dashDepartment"
+                  class="form-select"
+                  required
+                >
+
+                  <option value="">
+                    -- Select Department --
+                  </option>
+
+                  <option>
+                    Computer Science
+                  </option>
+
+                  <option>
+                    Software Engineering
+                  </option>
+
+                  <option>
+                    Data Science
+                  </option>
+
+                </select>
+
+                <div
+                  id="dashDepartmentError"
+                  class="invalid-feedback"
+                ></div>
+
+              </div>
+
+
+              <!-- Semester -->
+
+              <div class="col-md-6 mb-3">
+
+                <label
+                  for="dashSemester"
+                  class="form-label"
+                >
+                  Semester
+                </label>
+
+                <input
+                  type="number"
+                  id="dashSemester"
+                  class="form-control"
+                  required
+                  min="1"
+                  max="8"
+                >
+
+                <div
+                  id="dashSemesterError"
+                  class="invalid-feedback"
+                ></div>
+
+              </div>
+
+
+              <!-- CGPA -->
+
+              <div class="col-md-6 mb-3">
+
+                <label
+                  for="dashCgpa"
+                  class="form-label"
+                >
+                  CGPA
+                </label>
+
+                <input
+                  type="number"
+                  id="dashCgpa"
+                  class="form-control"
+                  required
+                  min="0"
+                  max="4"
+                  step="0.01"
+                >
+
+                <div
+                  id="dashCgpaError"
+                  class="invalid-feedback"
+                ></div>
+
+              </div>
+
+            </div>
+
+
+            <button
+              type="submit"
+              class="btn btn-primary"
+            >
+              Add Student
+            </button>
+
+
+            <!-- NOTE: type button so JS controls reset -->
+
+            <button
+              type="button"
+              id="dashboardResetBtn"
+              class="btn btn-outline-secondary"
+            >
+              Reset
+            </button>
+
+          </form>
+
+
+          <div
+            id="dashboardMessage"
+            class="mt-3"
+          ></div>
+
+        </div>
+
+
+        <!-- Statistics -->
+
+        <div
+          id="dashboardStats"
+          class="row g-3 mb-4"
+        ></div>
+
+
+        <!-- Search / Filter / Sort -->
+
+        <div class="profile-card mb-4">
+
+          <div class="row g-3">
+
+            <div class="col-lg-5">
+
+              <input
+                type="text"
+                id="dashboardSearch"
+                class="form-control"
+                placeholder="Search by name or roll number..."
+              >
+
+            </div>
+
+
+            <div class="col-lg-4">
+
+              <select
+                id="dashboardDepartmentFilter"
+                class="form-select"
+              >
+
+                <option value="">
+                  All Departments
+                </option>
+
+                <option>
+                  Computer Science
+                </option>
+
+                <option>
+                  Software Engineering
+                </option>
+
+                <option>
+                  Data Science
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="col-lg-3">
+
+              <button
+                type="button"
+                id="sortCgpaBtn"
+                class="btn btn-dark w-100"
+              >
+                Sort CGPA: High → Low
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Cards -->
+
+        <div id="dashboardStudentList"></div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      CS-301L — Full Stack Web Development
+
+    </div>
+
+  </footer>
+
+
+  <!-- Bootstrap JS -->
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  ></script>
+
+
+  <!-- Lab 06 JS -->
+
+  <script src="lab06.js"></script>
+
+</body>
+
+</html>
